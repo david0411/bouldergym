@@ -1,0 +1,75 @@
+package com.valider.bouldergym.data.entity;
+
+import jakarta.persistence.*;
+
+import java.sql.Time;
+
+@Entity
+@Table(name = "open_hour")
+public class OpenHourEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "open_hour_id")
+    private Long openHourId;
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private BoulderGymEntity boulderGymEntity;
+    @ManyToOne
+    @JoinColumn(name = "date_type_id")
+    private DateTypeEntity dateTypeEntity;
+    @Column(name = "open_time")
+    private Time openTime;
+    @Column(name = "close_time")
+    private Time closeTime;
+
+    public OpenHourEntity() {
+    }
+
+    public OpenHourEntity(Long openHourId, BoulderGymEntity boulderGymEntity, DateTypeEntity dateTypeEntity, Time openTime, Time closeTime) {
+        this.openHourId = openHourId;
+        this.boulderGymEntity = boulderGymEntity;
+        this.dateTypeEntity = dateTypeEntity;
+        this.openTime = openTime;
+        this.closeTime = closeTime;
+    }
+
+    public Long getOpenHourId() {
+        return openHourId;
+    }
+
+    public void setOpenHourId(Long openHourId) {
+        this.openHourId = openHourId;
+    }
+
+    public BoulderGymEntity getBoulderGymEntity() {
+        return boulderGymEntity;
+    }
+
+    public void setBoulderGymEntity(BoulderGymEntity boulderGymEntity) {
+        this.boulderGymEntity = boulderGymEntity;
+    }
+
+    public DateTypeEntity getDateType() {
+        return dateTypeEntity;
+    }
+
+    public void setDateType(DateTypeEntity dateTypeEntity) {
+        this.dateTypeEntity = dateTypeEntity;
+    }
+
+    public Time getOpenTime() {
+        return openTime;
+    }
+
+    public void setOpenTime(Time openTime) {
+        this.openTime = openTime;
+    }
+
+    public Time getCloseTime() {
+        return closeTime;
+    }
+
+    public void setCloseTime(Time closeTime) {
+        this.closeTime = closeTime;
+    }
+}
