@@ -1,35 +1,23 @@
 package com.valider.bouldergym.data.data;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
+import com.valider.bouldergym.data.dto.PutCalendarReqDto;
 import com.valider.bouldergym.data.entity.CalendarActivityEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
 
 import java.sql.Timestamp;
 
-public class GetCalendarByMonthRespData {
-    private Long calendarId;
+public class PutCalendarReqData {
     private String locationName;
     private String subLocationName;
     private String eventName;
     private Timestamp eventStartTime;
     private Timestamp eventEndTime;
 
-    public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
-        this.calendarId = calendarActivityEntity.getCalendarId();
-        this.locationName = calendarActivityEntity.getBoulderGymEntity().getLocationName();
-        this.subLocationName = calendarActivityEntity.getSubLocationEntity().getSubLocationName();
-        this.eventName = calendarActivityEntity.getEventEntity().getEventName();
-        this.eventStartTime = calendarActivityEntity.getEventStartTime();
-        this.eventEndTime = calendarActivityEntity.getEventEndTime();
-    }
-
-    public Long getCalendarId() {
-        return calendarId;
-    }
-
-    public void setCalendarId(Long calendarId) {
-        this.calendarId = calendarId;
+    public PutCalendarReqData(PutCalendarReqDto putCalendarReqDto) {
+        this.locationName = putCalendarReqDto.getLocationName();
+        this.subLocationName = putCalendarReqDto.getSubLocationName();
+        this.eventName = putCalendarReqDto.getEventName();
+        this.eventStartTime = putCalendarReqDto.getEventStartTime();
+        this.eventEndTime = putCalendarReqDto.getEventEndTime();
     }
 
     public String getLocationName() {

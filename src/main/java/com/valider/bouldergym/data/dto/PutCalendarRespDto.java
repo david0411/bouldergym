@@ -1,27 +1,33 @@
-package com.valider.bouldergym.data.data;
+package com.valider.bouldergym.data.dto;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
-import com.valider.bouldergym.data.entity.CalendarActivityEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.valider.bouldergym.data.data.GetCalendarByMonthRespData;
+import com.valider.bouldergym.data.data.PutCalendarRespData;
 
 import java.sql.Timestamp;
 
-public class GetCalendarByMonthRespData {
+public class PutCalendarRespDto {
+    @JsonProperty("calendar_id")
     private Long calendarId;
+    @JsonProperty("location_name")
     private String locationName;
+    @JsonProperty("sub_location_name")
     private String subLocationName;
+    @JsonProperty("event_name")
     private String eventName;
+    @JsonProperty("event_start_time")
     private Timestamp eventStartTime;
+    @JsonProperty("event_end_time")
     private Timestamp eventEndTime;
 
-    public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
-        this.calendarId = calendarActivityEntity.getCalendarId();
-        this.locationName = calendarActivityEntity.getBoulderGymEntity().getLocationName();
-        this.subLocationName = calendarActivityEntity.getSubLocationEntity().getSubLocationName();
-        this.eventName = calendarActivityEntity.getEventEntity().getEventName();
-        this.eventStartTime = calendarActivityEntity.getEventStartTime();
-        this.eventEndTime = calendarActivityEntity.getEventEndTime();
+
+    public PutCalendarRespDto(PutCalendarRespData putCalendarRespData) {
+        this.calendarId = putCalendarRespData.getCalendarId();
+        this.locationName = putCalendarRespData.getLocationName();
+        this.subLocationName = putCalendarRespData.getSubLocationName();
+        this.eventName = putCalendarRespData.getEventName();
+        this.eventStartTime = putCalendarRespData.getEventStartTime();
+        this.eventEndTime = putCalendarRespData.getEventEndTime();
     }
 
     public Long getCalendarId() {

@@ -1,5 +1,6 @@
 package com.valider.bouldergym.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valider.bouldergym.data.data.GetCalendarByMonthRespData;
 import com.valider.bouldergym.data.entity.BoulderGymEntity;
 import com.valider.bouldergym.data.entity.EventEntity;
@@ -8,18 +9,24 @@ import com.valider.bouldergym.data.entity.SubLocationEntity;
 import java.sql.Timestamp;
 
 public class GetCalendarByMonthRespDto {
+    @JsonProperty("calendar_id")
     private Long calendarId;
-    private BoulderGymEntity boulderGymEntity;
-    private SubLocationEntity subLocationEntity;
-    private EventEntity eventEntity;
+    @JsonProperty("location_name")
+    private String locationName;
+    @JsonProperty("sub_location_name")
+    private String subLocationName;
+    @JsonProperty("event_name")
+    private String eventName;
+    @JsonProperty("event_start_time")
     private Timestamp eventStartTime;
+    @JsonProperty("event_end_time")
     private Timestamp eventEndTime;
 
     public GetCalendarByMonthRespDto(GetCalendarByMonthRespData getCalendarByMonthRespData) {
         this.calendarId = getCalendarByMonthRespData.getCalendarId();
-        this.boulderGymEntity = getCalendarByMonthRespData.getBoulderGymEntity();
-        this.subLocationEntity = getCalendarByMonthRespData.getSubLocationEntity();
-        this.eventEntity = getCalendarByMonthRespData.getEventEntity();
+        this.locationName = getCalendarByMonthRespData.getLocationName();
+        this.subLocationName = getCalendarByMonthRespData.getSubLocationName();
+        this.eventName = getCalendarByMonthRespData.getEventName();
         this.eventStartTime = getCalendarByMonthRespData.getEventStartTime();
         this.eventEndTime = getCalendarByMonthRespData.getEventEndTime();
     }
@@ -32,28 +39,28 @@ public class GetCalendarByMonthRespDto {
         this.calendarId = calendarId;
     }
 
-    public BoulderGymEntity getBoulderGymEntity() {
-        return boulderGymEntity;
+    public String getLocationName() {
+        return locationName;
     }
 
-    public void setBoulderGymEntity(BoulderGymEntity boulderGymEntity) {
-        this.boulderGymEntity = boulderGymEntity;
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
-    public SubLocationEntity getSubLocationEntity() {
-        return subLocationEntity;
+    public String getSubLocationName() {
+        return subLocationName;
     }
 
-    public void setSubLocationEntity(SubLocationEntity subLocationEntity) {
-        this.subLocationEntity = subLocationEntity;
+    public void setSubLocationName(String subLocationName) {
+        this.subLocationName = subLocationName;
     }
 
-    public EventEntity getEventEntity() {
-        return eventEntity;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setEventEntity(EventEntity eventEntity) {
-        this.eventEntity = eventEntity;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     public Timestamp getEventStartTime() {

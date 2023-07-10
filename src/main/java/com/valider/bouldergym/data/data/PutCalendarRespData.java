@@ -1,13 +1,10 @@
 package com.valider.bouldergym.data.data;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
 import com.valider.bouldergym.data.entity.CalendarActivityEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
 
 import java.sql.Timestamp;
 
-public class GetCalendarByMonthRespData {
+public class PutCalendarRespData {
     private Long calendarId;
     private String locationName;
     private String subLocationName;
@@ -15,7 +12,7 @@ public class GetCalendarByMonthRespData {
     private Timestamp eventStartTime;
     private Timestamp eventEndTime;
 
-    public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
+    public PutCalendarRespData(CalendarActivityEntity calendarActivityEntity) {
         this.calendarId = calendarActivityEntity.getCalendarId();
         this.locationName = calendarActivityEntity.getBoulderGymEntity().getLocationName();
         this.subLocationName = calendarActivityEntity.getSubLocationEntity().getSubLocationName();

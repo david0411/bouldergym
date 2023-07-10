@@ -1,35 +1,27 @@
-package com.valider.bouldergym.data.data;
+package com.valider.bouldergym.data.dto;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
-import com.valider.bouldergym.data.entity.CalendarActivityEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Timestamp;
 
-public class GetCalendarByMonthRespData {
-    private Long calendarId;
+public class PutCalendarReqDto {
+    @JsonProperty("location_name")
     private String locationName;
+    @JsonProperty("sub_location_name")
     private String subLocationName;
+    @JsonProperty("event_name")
     private String eventName;
+    @JsonProperty("event_start_time")
     private Timestamp eventStartTime;
+    @JsonProperty("event_end_time")
     private Timestamp eventEndTime;
 
-    public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
-        this.calendarId = calendarActivityEntity.getCalendarId();
-        this.locationName = calendarActivityEntity.getBoulderGymEntity().getLocationName();
-        this.subLocationName = calendarActivityEntity.getSubLocationEntity().getSubLocationName();
-        this.eventName = calendarActivityEntity.getEventEntity().getEventName();
-        this.eventStartTime = calendarActivityEntity.getEventStartTime();
-        this.eventEndTime = calendarActivityEntity.getEventEndTime();
-    }
-
-    public Long getCalendarId() {
-        return calendarId;
-    }
-
-    public void setCalendarId(Long calendarId) {
-        this.calendarId = calendarId;
+    public PutCalendarReqDto(String locationName, String subLocationName, String eventName, Timestamp eventStartTime, Timestamp eventEndTime) {
+        this.locationName = locationName;
+        this.subLocationName = subLocationName;
+        this.eventName = eventName;
+        this.eventStartTime = eventStartTime;
+        this.eventEndTime = eventEndTime;
     }
 
     public String getLocationName() {

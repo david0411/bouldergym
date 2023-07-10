@@ -1,23 +1,24 @@
 package com.valider.bouldergym.api;
 
+import com.valider.bouldergym.data.data.PutCalendarReqData;
+import com.valider.bouldergym.data.data.PutCalendarRespData;
 import com.valider.bouldergym.data.dto.GetCalendarByMonthRespDto;
+import com.valider.bouldergym.data.dto.PutCalendarReqDto;
+import com.valider.bouldergym.data.dto.PutCalendarRespDto;
 import com.valider.bouldergym.service.CalendarService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/public")
+@RequestMapping("/calendar")
 public class CalendarApi {
     CalendarService calendarService;
 
     public CalendarApi(CalendarService calendarService) {
         this.calendarService = calendarService;
     }
-    @GetMapping("/{year}/{month}")
+    @GetMapping("/public/{year}/{month}")
     public List<GetCalendarByMonthRespDto> getCalendarByMonth(@PathVariable Integer year, @PathVariable Integer month)  {
         return calendarService
                 .getCalendarByMonthData(year, month)
@@ -25,4 +26,16 @@ public class CalendarApi {
                 .map(GetCalendarByMonthRespDto::new)
                 .toList();
     }
+
+    @PutMapping("/public/add_calendar")
+    public PutCalendarRespDto putCalendar(@RequestBody PutCalendarReqDto putCalendarReqDto) {
+        return new PutCalendarRespDto(
+                calendarService.
+                        putCalendar(
+                                new PutCalendarReqData(putCalendarReqDto
+                                )
+                        )
+        );
+    }
+
 }

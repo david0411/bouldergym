@@ -29,8 +29,7 @@ public class CalendarActivityEntity {
     public CalendarActivityEntity() {
     }
 
-    public CalendarActivityEntity(Long calendarId, BoulderGymEntity boulderGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
-        this.calendarId = calendarId;
+    public CalendarActivityEntity(BoulderGymEntity boulderGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
         this.boulderGymEntity = boulderGymEntity;
         this.subLocationEntity = subLocationEntity;
         this.eventEntity = eventEntity;
