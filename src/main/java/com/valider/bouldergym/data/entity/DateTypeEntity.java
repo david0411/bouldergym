@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "date_type")
 public class DateTypeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "date_type_id")

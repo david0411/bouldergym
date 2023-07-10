@@ -6,8 +6,8 @@ import jakarta.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "calendar")
-public class CalendarEntity {
+@Table(name = "calendar_activity")
+public class CalendarActivityEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -26,8 +26,18 @@ public class CalendarEntity {
     @Column(name = "event_end_time")
     private Timestamp eventEndTime;
 
-    public CalendarEntity() {
+    public CalendarActivityEntity() {
     }
+
+    public CalendarActivityEntity(Long calendarId, BoulderGymEntity boulderGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
+        this.calendarId = calendarId;
+        this.boulderGymEntity = boulderGymEntity;
+        this.subLocationEntity = subLocationEntity;
+        this.eventEntity = eventEntity;
+        this.eventStartTime = eventStartTime;
+        this.eventEndTime = eventEndTime;
+    }
+
     public Timestamp getEventStartTime() {
         return eventStartTime;
     }

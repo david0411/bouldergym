@@ -16,12 +16,12 @@ public class GetCalendarByMonthRespDto {
     private Timestamp eventEndTime;
 
     public GetCalendarByMonthRespDto(GetCalendarByMonthRespData getCalendarByMonthRespData) {
-        this.calendarId = calendarId;
-        this.boulderGymEntity = boulderGymEntity;
-        this.subLocationEntity = subLocationEntity;
-        this.eventEntity = eventEntity;
-        this.eventStartTime = eventStartTime;
-        this.eventEndTime = eventEndTime;
+        this.calendarId = getCalendarByMonthRespData.getCalendarId();
+        this.boulderGymEntity = getCalendarByMonthRespData.getBoulderGymEntity();
+        this.subLocationEntity = getCalendarByMonthRespData.getSubLocationEntity();
+        this.eventEntity = getCalendarByMonthRespData.getEventEntity();
+        this.eventStartTime = getCalendarByMonthRespData.getEventStartTime();
+        this.eventEndTime = getCalendarByMonthRespData.getEventEndTime();
     }
 
     public Long getCalendarId() {

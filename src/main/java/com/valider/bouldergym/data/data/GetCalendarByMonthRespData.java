@@ -1,7 +1,7 @@
 package com.valider.bouldergym.data.data;
 
 import com.valider.bouldergym.data.entity.BoulderGymEntity;
-import com.valider.bouldergym.data.entity.CalendarEntity;
+import com.valider.bouldergym.data.entity.CalendarActivityEntity;
 import com.valider.bouldergym.data.entity.EventEntity;
 import com.valider.bouldergym.data.entity.SubLocationEntity;
 
@@ -15,13 +15,13 @@ public class GetCalendarByMonthRespData {
     private Timestamp eventStartTime;
     private Timestamp eventEndTime;
 
-    public GetCalendarByMonthRespData(CalendarEntity calendarEntity) {
-        this.calendarId = calendarId;
-        this.boulderGymEntity = boulderGymEntity;
-        this.subLocationEntity = subLocationEntity;
-        this.eventEntity = eventEntity;
-        this.eventStartTime = eventStartTime;
-        this.eventEndTime = eventEndTime;
+    public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
+        this.calendarId = calendarActivityEntity.getCalendarId();
+        this.boulderGymEntity = calendarActivityEntity.getBoulderGymEntity();
+        this.subLocationEntity = calendarActivityEntity.getSubLocationEntity();
+        this.eventEntity = calendarActivityEntity.getEventEntity();
+        this.eventStartTime = calendarActivityEntity.getEventStartTime();
+        this.eventEndTime = calendarActivityEntity.getEventEndTime();
     }
 
     public Long getCalendarId() {
