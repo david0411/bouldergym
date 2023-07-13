@@ -2,9 +2,6 @@ package com.valider.bouldergym.data.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valider.bouldergym.data.data.GetCalendarByMonthRespData;
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
 
 import java.sql.Timestamp;
 

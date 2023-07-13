@@ -1,9 +1,6 @@
 package com.valider.bouldergym.data.data;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
 import com.valider.bouldergym.data.entity.CalendarActivityEntity;
-import com.valider.bouldergym.data.entity.EventEntity;
-import com.valider.bouldergym.data.entity.SubLocationEntity;
 
 import java.sql.Timestamp;
 

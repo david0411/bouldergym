@@ -1,7 +1,6 @@
 package com.valider.bouldergym.data.data;
 
 import com.valider.bouldergym.data.dto.PutCalendarReqDto;
-import com.valider.bouldergym.data.entity.CalendarActivityEntity;
 
 import java.sql.Timestamp;
 

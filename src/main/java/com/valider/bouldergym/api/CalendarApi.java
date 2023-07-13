@@ -1,7 +1,6 @@
 package com.valider.bouldergym.api;
 
 import com.valider.bouldergym.data.data.PutCalendarReqData;
-import com.valider.bouldergym.data.data.PutCalendarRespData;
 import com.valider.bouldergym.data.dto.GetCalendarByMonthRespDto;
 import com.valider.bouldergym.data.dto.PutCalendarReqDto;
 import com.valider.bouldergym.data.dto.PutCalendarRespDto;
@@ -18,8 +17,9 @@ public class CalendarApi {
     public CalendarApi(CalendarService calendarService) {
         this.calendarService = calendarService;
     }
+
     @GetMapping("/public/{year}/{month}")
-    public List<GetCalendarByMonthRespDto> getCalendarByMonth(@PathVariable Integer year, @PathVariable Integer month)  {
+    public List<GetCalendarByMonthRespDto> getCalendarByMonth(@PathVariable Integer year, @PathVariable Integer month) {
         return calendarService
                 .getCalendarByMonthData(year, month)
                 .stream()
@@ -30,12 +30,8 @@ public class CalendarApi {
     @PutMapping("/public/add_calendar")
     public PutCalendarRespDto putCalendar(@RequestBody PutCalendarReqDto putCalendarReqDto) {
         return new PutCalendarRespDto(
-                calendarService.
-                        putCalendar(
-                                new PutCalendarReqData(putCalendarReqDto
-                                )
-                        )
+                calendarService
+                        .putCalendar(new PutCalendarReqData(putCalendarReqDto))
         );
     }
-
 }

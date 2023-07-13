@@ -31,7 +31,7 @@ public class CalendarServiceImpl implements CalendarService {
         this.eventService = eventService;
     }
 
-    public List<GetCalendarByMonthRespData> getCalendarByMonthData(Integer year, Integer month)  {
+    public List<GetCalendarByMonthRespData> getCalendarByMonthData(Integer year, Integer month) {
         return calendarRepository
                 .getCalendarByMonth(year, month)
                 .stream()
@@ -40,15 +40,17 @@ public class CalendarServiceImpl implements CalendarService {
     }
 
 
-    public PutCalendarRespData putCalendar(PutCalendarReqData putCalendarReqData)   {
-        return new PutCalendarRespData(calendarRepository.save(
-                new CalendarActivityEntity(
-                        boulderGymService.getBoulderGymByName(putCalendarReqData.getLocationName()),
-                        subLocationService.getSubLocationByName(putCalendarReqData.getSubLocationName()),
-                        eventService.getEventByName(putCalendarReqData.getEventName()),
-                        putCalendarReqData.getEventStartTime(),
-                        putCalendarReqData.getEventEndTime()
+    public PutCalendarRespData putCalendar(PutCalendarReqData putCalendarReqData) {
+        return new PutCalendarRespData(
+                calendarRepository.save(
+                        new CalendarActivityEntity(
+                                boulderGymService.getBoulderGymByName(putCalendarReqData.getLocationName()),
+                                subLocationService.getSubLocationByName(putCalendarReqData.getSubLocationName()),
+                                eventService.getEventByName(putCalendarReqData.getEventName()),
+                                putCalendarReqData.getEventStartTime(),
+                                putCalendarReqData.getEventEndTime()
+                        )
                 )
-        ));
+        );
     }
 }
