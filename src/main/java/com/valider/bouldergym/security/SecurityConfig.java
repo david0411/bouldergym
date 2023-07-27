@@ -24,7 +24,6 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .csrf(AbstractHttpConfigurer::disable);
-
         http
                 .oauth2ResourceServer(
                         oauth2ResourceServer -> oauth2ResourceServer.jwt(
