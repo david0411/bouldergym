@@ -5,47 +5,47 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.sql.Timestamp;
 
 public class PutCalendarReqDto {
-    @JsonProperty("location_name")
-    private String locationName;
-    @JsonProperty("sub_location_name")
-    private String subLocationName;
-    @JsonProperty("event_name")
-    private String eventName;
+    @JsonProperty("location_id")
+    private int locationId;
+    @JsonProperty("sub_location_id")
+    private int subLocationId;
+    @JsonProperty("event_id")
+    private int eventId;
     @JsonProperty("event_start_time")
     private Timestamp eventStartTime;
     @JsonProperty("event_end_time")
     private Timestamp eventEndTime;
 
-    public PutCalendarReqDto(String locationName, String subLocationName, String eventName, Timestamp eventStartTime, Timestamp eventEndTime) {
-        this.locationName = locationName;
-        this.subLocationName = subLocationName;
-        this.eventName = eventName;
+    public PutCalendarReqDto(int locationId, int subLocationId, int eventId, Timestamp eventStartTime, Timestamp eventEndTime) {
+        this.locationId = locationId;
+        this.subLocationId = subLocationId;
+        this.eventId = eventId;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
     }
 
-    public String getLocationName() {
-        return locationName;
+    public int getLocationId() {
+        return locationId;
     }
 
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
-    public String getSubLocationName() {
-        return subLocationName;
+    public int getSubLocationId() {
+        return subLocationId;
     }
 
-    public void setSubLocationName(String subLocationName) {
-        this.subLocationName = subLocationName;
+    public void setSubLocationId(int subLocationId) {
+        this.subLocationId = subLocationId;
     }
 
-    public String getEventName() {
-        return eventName;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public Timestamp getEventStartTime() {

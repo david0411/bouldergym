@@ -30,6 +30,7 @@ public class CalendarActivityEntity {
     }
 
     public CalendarActivityEntity(BoulderGymEntity boulderGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
+        this.calendarId = null;
         this.boulderGymEntity = boulderGymEntity;
         this.subLocationEntity = subLocationEntity;
         this.eventEntity = eventEntity;

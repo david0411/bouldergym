@@ -12,4 +12,10 @@ public interface CalendarRepository extends CrudRepository<CalendarActivityEntit
             "where Year(event_start_time) = :year " +
             "and MONTH(event_start_time) = :month", nativeQuery = true)
     List<CalendarActivityEntity> getCalendarByMonth(Integer year, Integer month);
+
+    @Query(value = "select * from calendar_activity " +
+            "where calendar_activity.calendar_id = :calendarId", nativeQuery = true)
+    CalendarActivityEntity getCalendarById(Integer calendarId);
 }
+
+

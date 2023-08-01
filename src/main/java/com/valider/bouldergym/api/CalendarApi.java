@@ -1,6 +1,7 @@
 package com.valider.bouldergym.api;
 
 import com.valider.bouldergym.data.data.PutCalendarReqData;
+import com.valider.bouldergym.data.dto.GetCalendarByIdRespDto;
 import com.valider.bouldergym.data.dto.GetCalendarByMonthRespDto;
 import com.valider.bouldergym.data.dto.PutCalendarReqDto;
 import com.valider.bouldergym.data.dto.PutCalendarRespDto;
@@ -25,6 +26,11 @@ public class CalendarApi {
                 .stream()
                 .map(GetCalendarByMonthRespDto::new)
                 .toList();
+    }
+
+    @GetMapping("/public/{calendarId}")
+    public GetCalendarByIdRespDto getCalendarById(@PathVariable Integer calendarId) {
+        return new GetCalendarByIdRespDto(calendarService.getCalendarById(calendarId));
     }
 
     @PutMapping("/public/add_calendar")

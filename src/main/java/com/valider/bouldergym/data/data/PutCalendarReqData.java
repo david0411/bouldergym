@@ -5,42 +5,42 @@ import com.valider.bouldergym.data.dto.PutCalendarReqDto;
 import java.sql.Timestamp;
 
 public class PutCalendarReqData {
-    private String locationName;
-    private String subLocationName;
-    private String eventName;
+    private int locationId;
+    private int subLocationId;
+    private int eventId;
     private Timestamp eventStartTime;
     private Timestamp eventEndTime;
 
     public PutCalendarReqData(PutCalendarReqDto putCalendarReqDto) {
-        this.locationName = putCalendarReqDto.getLocationName();
-        this.subLocationName = putCalendarReqDto.getSubLocationName();
-        this.eventName = putCalendarReqDto.getEventName();
+        this.locationId = putCalendarReqDto.getLocationId();
+        this.subLocationId = putCalendarReqDto.getSubLocationId();
+        this.eventId = putCalendarReqDto.getEventId();
         this.eventStartTime = putCalendarReqDto.getEventStartTime();
         this.eventEndTime = putCalendarReqDto.getEventEndTime();
     }
 
-    public String getLocationName() {
-        return locationName;
+    public int getLocationId() {
+        return locationId;
     }
 
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
-    public String getSubLocationName() {
-        return subLocationName;
+    public int getSubLocationId() {
+        return subLocationId;
     }
 
-    public void setSubLocationName(String subLocationName) {
-        this.subLocationName = subLocationName;
+    public void setSubLocationId(int subLocationId) {
+        this.subLocationId = subLocationId;
     }
 
-    public String getEventName() {
-        return eventName;
+    public int getEventId() {
+        return eventId;
     }
 
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public Timestamp getEventStartTime() {

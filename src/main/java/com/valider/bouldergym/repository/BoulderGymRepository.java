@@ -5,6 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface BoulderGymRepository extends CrudRepository<BoulderGymEntity, Long> {
+    @Query(value = "select * from boulder_gym where location_id = :locationId",nativeQuery = true)
+    BoulderGymEntity getBoulderGymById(int locationId);
+
     @Query(value = "select * from boulder_gym where location_name = :locationName",nativeQuery = true)
     BoulderGymEntity getBoulderGymByName(String locationName);
 }
