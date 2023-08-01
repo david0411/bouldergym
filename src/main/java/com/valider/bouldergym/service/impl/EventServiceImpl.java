@@ -1,11 +1,14 @@
 package com.valider.bouldergym.service.impl;
 
+import com.valider.bouldergym.data.data.GetEventRespData;
 import com.valider.bouldergym.data.entity.EventEntity;
 import com.valider.bouldergym.repository.EventRepository;
 import com.valider.bouldergym.service.EventService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class EventServiceImpl implements EventService {
@@ -14,6 +17,15 @@ public class EventServiceImpl implements EventService {
 
     public EventServiceImpl(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
+    }
+
+    public List<GetEventRespData> getEvent()    {
+        logger.info("Start get All Event:");
+        return eventRepository
+                .getEvent()
+                .stream()
+                .map(GetEventRespData::new)
+                .toList();
     }
 
     public EventEntity getEventByName(String eventName) {

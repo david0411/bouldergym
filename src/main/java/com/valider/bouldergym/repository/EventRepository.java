@@ -4,7 +4,12 @@ import com.valider.bouldergym.data.entity.EventEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 public interface EventRepository extends CrudRepository<EventEntity, Long> {
+
+    @Query(value = "select * from event", nativeQuery = true)
+    List<EventEntity> getEvent();
     @Query(value = "select * from event where event_id=:eventId", nativeQuery = true)
     EventEntity getEventById(int eventId);
 
