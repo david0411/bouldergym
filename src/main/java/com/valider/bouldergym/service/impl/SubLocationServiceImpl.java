@@ -20,7 +20,7 @@ public class SubLocationServiceImpl implements SubLocationService {
     }
 
     public List<GetSubLocationRespData> getSubLocation() {
-        logger.info("Start get All SubLocation:");
+        logger.info("Start get All SubLocation.");
         return subLocationRepository
                 .getSubLocation()
                 .stream()
@@ -29,11 +29,11 @@ public class SubLocationServiceImpl implements SubLocationService {
     }
 
     public SubLocationEntity getSubLocationByName(String subLocationName) {
-        logger.info("Start get SubLocation:" + " SubName: " + subLocationName);
+        logger.info("Start get SubLocation: " + " SubName: " + subLocationName);
         return subLocationRepository.getSubLocationByName(subLocationName);
     }
     public SubLocationEntity getSubLocationById(int subLocationId) {
-        logger.info("Start get SubLocation:" + " SubId: " + subLocationId);
+        logger.info("Start get SubLocation: " + " SubId: " + subLocationId);
         return subLocationRepository.getSubLocationById(subLocationId);
     }
 }

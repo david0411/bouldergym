@@ -20,7 +20,7 @@ public class BoulderGymServiceImpl implements BoulderGymService {
     }
 
     public List<GetBoulderGymRespData> getBoulderGym() {
-        logger.info("Start get All Gym");
+        logger.info("Start get All Gym.");
         return boulderGymRepository
                 .getBoulderGym()
                 .stream()
@@ -29,12 +29,12 @@ public class BoulderGymServiceImpl implements BoulderGymService {
     }
 
     public BoulderGymEntity getBoulderGymByName(String locationName)    {
-        logger.info("Start get Gym:" + " GymName: " + locationName);
+        logger.info("Start get Gym: " + " GymName: " + locationName);
         return boulderGymRepository.getBoulderGymByName(locationName);
     }
 
     public BoulderGymEntity getBoulderGymById(int locationId)    {
-        logger.info("Start get Gym:" + " GymId: " + locationId);
+        logger.info("Start get Gym: " + " GymId: " + locationId);
         return boulderGymRepository.getBoulderGymById(locationId);
     }
 }

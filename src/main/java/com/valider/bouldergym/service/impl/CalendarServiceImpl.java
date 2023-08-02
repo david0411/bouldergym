@@ -41,7 +41,7 @@ public class CalendarServiceImpl implements CalendarService {
     public List<GetCalendarByMonthRespData> getCalendarByMonthData(Integer year, Integer month) {
         logger.info("Start get Calendar:" +
                 " Year:" + year +
-                " Month" + month);
+                " Month:" + month);
         return calendarRepository
                 .getCalendarByMonth(year, month)
                 .stream()

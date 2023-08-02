@@ -20,7 +20,7 @@ public class EventServiceImpl implements EventService {
     }
 
     public List<GetEventRespData> getEvent()    {
-        logger.info("Start get All Event:");
+        logger.info("Start get All Event.");
         return eventRepository
                 .getEvent()
                 .stream()
@@ -29,12 +29,12 @@ public class EventServiceImpl implements EventService {
     }
 
     public EventEntity getEventByName(String eventName) {
-        logger.info("Start get Event:" + " EventName: " + eventName);
+        logger.info("Start get Event: " + " EventName: " + eventName);
         return eventRepository.getEventByName(eventName);
     }
 
     public EventEntity getEventById(int eventId) {
-        logger.info("Start get Event:" + " EventId: " + eventId);
+        logger.info("Start get Event: " + " EventId: " + eventId);
         return eventRepository.getEventById(eventId);
     }
 }

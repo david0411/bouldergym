@@ -1,9 +1,12 @@
 package com.valider.bouldergym.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valider.bouldergym.data.data.GetEventRespData;
 
 public class GetEventRespDto {
+    @JsonProperty("event_id")
     private Long eventId;
+    @JsonProperty("event_name")
     private String eventName;
 
     public GetEventRespDto (GetEventRespData getEventRespData)  {

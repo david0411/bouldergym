@@ -1,10 +1,14 @@
 package com.valider.bouldergym.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.valider.bouldergym.data.data.GetSubLocationRespData;
 
 public class GetSubLocationRespDto {
+    @JsonProperty("subLocation_id")
     private Long subLocationId;
+    @JsonProperty("subLocation_name")
     private String subLocationName;
+    @JsonProperty("location_id")
     private Long locationId;
 
     public GetSubLocationRespDto(GetSubLocationRespData getSubLocationRespData)  {
