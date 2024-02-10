@@ -13,7 +13,7 @@ public class OpenHourEntity {
     private Long openHourId;
     @ManyToOne
     @JoinColumn(name = "location_id")
-    private BoulderGymEntity boulderGymEntity;
+    private BoulderingGymEntity boulderingGymEntity;
     @ManyToOne
     @JoinColumn(name = "date_type_id")
     private DateTypeEntity dateTypeEntity;
@@ -25,9 +25,9 @@ public class OpenHourEntity {
     public OpenHourEntity() {
     }
 
-    public OpenHourEntity(Long openHourId, BoulderGymEntity boulderGymEntity, DateTypeEntity dateTypeEntity, Time openTime, Time closeTime) {
+    public OpenHourEntity(Long openHourId, BoulderingGymEntity boulderingGymEntity, DateTypeEntity dateTypeEntity, Time openTime, Time closeTime) {
         this.openHourId = openHourId;
-        this.boulderGymEntity = boulderGymEntity;
+        this.boulderingGymEntity = boulderingGymEntity;
         this.dateTypeEntity = dateTypeEntity;
         this.openTime = openTime;
         this.closeTime = closeTime;
@@ -41,12 +41,12 @@ public class OpenHourEntity {
         this.openHourId = openHourId;
     }
 
-    public BoulderGymEntity getBoulderGymEntity() {
-        return boulderGymEntity;
+    public BoulderingGymEntity getBoulderingGymEntity() {
+        return boulderingGymEntity;
     }
 
-    public void setBoulderGymEntity(BoulderGymEntity boulderGymEntity) {
-        this.boulderGymEntity = boulderGymEntity;
+    public void setBoulderingGymEntity(BoulderingGymEntity boulderingGymEntity) {
+        this.boulderingGymEntity = boulderingGymEntity;
     }
 
     public DateTypeEntity getDateType() {

@@ -10,7 +10,7 @@ public class GetSubLocationRespData {
     public GetSubLocationRespData(SubLocationEntity subLocationEntity)   {
         this.subLocationId = subLocationEntity.getSubLocationId();
         this.subLocationName = subLocationEntity.getSubLocationName();
-        this.locationId = subLocationEntity.getBoulderGymEntity().getLocationId();
+        this.locationId = subLocationEntity.getBoulderingGymEntity().getLocationId();
     }
 
     public Long getSubLocationId() {

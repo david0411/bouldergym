@@ -14,7 +14,7 @@ public class CalendarActivityEntity {
     private Long calendarId;
     @ManyToOne
     @JoinColumn(name = "location_id")
-    private BoulderGymEntity boulderGymEntity;
+    private BoulderingGymEntity boulderingGymEntity;
     @ManyToOne
     @JoinColumn(name = "sub_location_id")
     private SubLocationEntity subLocationEntity;
@@ -29,9 +29,9 @@ public class CalendarActivityEntity {
     public CalendarActivityEntity() {
     }
 
-    public CalendarActivityEntity(BoulderGymEntity boulderGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
+    public CalendarActivityEntity(BoulderingGymEntity boulderingGymEntity, SubLocationEntity subLocationEntity, EventEntity eventEntity, Timestamp eventStartTime, Timestamp eventEndTime) {
         this.calendarId = null;
-        this.boulderGymEntity = boulderGymEntity;
+        this.boulderingGymEntity = boulderingGymEntity;
         this.subLocationEntity = subLocationEntity;
         this.eventEntity = eventEntity;
         this.eventStartTime = eventStartTime;
@@ -62,12 +62,12 @@ public class CalendarActivityEntity {
         this.calendarId = calendarId;
     }
 
-    public BoulderGymEntity getBoulderGymEntity() {
-        return boulderGymEntity;
+    public BoulderingGymEntity getBoulderingGymEntity() {
+        return boulderingGymEntity;
     }
 
-    public void setBoulderGymEntity(BoulderGymEntity boulderGymEntity) {
-        this.boulderGymEntity = boulderGymEntity;
+    public void setBoulderingGymEntity(BoulderingGymEntity boulderingGymEntity) {
+        this.boulderingGymEntity = boulderingGymEntity;
     }
 
     public SubLocationEntity getSubLocationEntity() {

@@ -4,12 +4,12 @@ import com.valider.bouldergym.data.data.GetCalendarByIdRespData;
 import com.valider.bouldergym.data.data.GetCalendarByMonthRespData;
 import com.valider.bouldergym.data.data.PutCalendarReqData;
 import com.valider.bouldergym.data.data.PutCalendarRespData;
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
+import com.valider.bouldergym.data.entity.BoulderingGymEntity;
 import com.valider.bouldergym.data.entity.CalendarActivityEntity;
 import com.valider.bouldergym.data.entity.EventEntity;
 import com.valider.bouldergym.data.entity.SubLocationEntity;
 import com.valider.bouldergym.repository.CalendarRepository;
-import com.valider.bouldergym.service.BoulderGymService;
+import com.valider.bouldergym.service.BoulderingGymService;
 import com.valider.bouldergym.service.CalendarService;
 import com.valider.bouldergym.service.EventService;
 import com.valider.bouldergym.service.SubLocationService;
@@ -22,18 +22,18 @@ import java.util.List;
 @Service
 public class CalendarServiceImpl implements CalendarService {
     CalendarRepository calendarRepository;
-    BoulderGymService boulderGymService;
+    BoulderingGymService boulderGymService;
     SubLocationService subLocationService;
     EventService eventService;
     Logger logger = LoggerFactory.getLogger(CalendarServiceImpl.class);
 
     public CalendarServiceImpl(
             CalendarRepository calendarRepository,
-            BoulderGymService boulderGymService,
+            BoulderingGymService boulderingGymService,
             SubLocationService subLocationService,
             EventService eventService) {
         this.calendarRepository = calendarRepository;
-        this.boulderGymService = boulderGymService;
+        this.boulderGymService = boulderingGymService;
         this.subLocationService = subLocationService;
         this.eventService = eventService;
     }
@@ -60,13 +60,13 @@ public class CalendarServiceImpl implements CalendarService {
                 " GymId:" + putCalendarReqData.getLocationId() +
                 " SubId:" + putCalendarReqData.getSubLocationId() +
                 " EventId:" + putCalendarReqData.getEventId());
-        BoulderGymEntity boulderGymEntity = boulderGymService.getBoulderGymById(putCalendarReqData.getLocationId());
+        BoulderingGymEntity boulderingGymEntity = boulderGymService.getGymById(putCalendarReqData.getLocationId());
         SubLocationEntity subLocationEntity = subLocationService.getSubLocationById(putCalendarReqData.getSubLocationId());
         EventEntity eventEntity = eventService.getEventById(putCalendarReqData.getEventId());
         return new PutCalendarRespData(
                 calendarRepository.save(
                         new CalendarActivityEntity(
-                                boulderGymEntity,
+                                boulderingGymEntity,
                                 subLocationEntity,
                                 eventEntity,
                                 putCalendarReqData.getEventStartTime(),

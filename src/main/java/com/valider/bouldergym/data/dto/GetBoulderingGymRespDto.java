@@ -1,9 +1,9 @@
 package com.valider.bouldergym.data.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.valider.bouldergym.data.data.GetBoulderGymRespData;
+import com.valider.bouldergym.data.data.GetBoulderingGymRespData;
 
-public class GetBoulderGymRespDto {
+public class GetBoulderingGymRespDto {
     @JsonProperty("location_id")
     private Long locationId;
     @JsonProperty("location_name")
@@ -11,10 +11,10 @@ public class GetBoulderGymRespDto {
     @JsonProperty("description")
     private String description;
 
-    public GetBoulderGymRespDto(GetBoulderGymRespData getBoulderGymRespData)   {
-        this.locationId = getBoulderGymRespData.getLocationId();
-        this.locationName = getBoulderGymRespData.getLocationName();
-        this.description = getBoulderGymRespData.getDescription();
+    public GetBoulderingGymRespDto(GetBoulderingGymRespData getBoulderingGymRespData)   {
+        this.locationId = getBoulderingGymRespData.getLocationId();
+        this.locationName = getBoulderingGymRespData.getLocationName();
+        this.description = getBoulderingGymRespData.getDescription();
     }
 
     public Long getLocationId() {

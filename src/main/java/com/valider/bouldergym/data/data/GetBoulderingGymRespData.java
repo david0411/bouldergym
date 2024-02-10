@@ -1,16 +1,16 @@
 package com.valider.bouldergym.data.data;
 
-import com.valider.bouldergym.data.entity.BoulderGymEntity;
+import com.valider.bouldergym.data.entity.BoulderingGymEntity;
 
-public class GetBoulderGymRespData {
+public class GetBoulderingGymRespData {
     private Long locationId;
     private String locationName;
     private String description;
 
-    public GetBoulderGymRespData(BoulderGymEntity boulderGymEntity) {
-        this.locationId = boulderGymEntity.getLocationId();
-        this.locationName = boulderGymEntity.getLocationName();
-        this.description = boulderGymEntity.getDescription();
+    public GetBoulderingGymRespData(BoulderingGymEntity boulderingGymEntity) {
+        this.locationId = boulderingGymEntity.getLocationId();
+        this.locationName = boulderingGymEntity.getLocationName();
+        this.description = boulderingGymEntity.getDescription();
     }
 
     public Long getLocationId() {

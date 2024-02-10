@@ -14,7 +14,7 @@ public class GetCalendarByMonthRespData {
 
     public GetCalendarByMonthRespData(CalendarActivityEntity calendarActivityEntity) {
         this.calendarId = calendarActivityEntity.getCalendarId();
-        this.locationName = calendarActivityEntity.getBoulderGymEntity().getLocationName();
+        this.locationName = calendarActivityEntity.getBoulderingGymEntity().getLocationName();
         this.subLocationName = calendarActivityEntity.getSubLocationEntity().getSubLocationName();
         this.eventName = calendarActivityEntity.getEventEntity().getEventName();
         this.eventStartTime = calendarActivityEntity.getEventStartTime();

@@ -11,16 +11,16 @@ public class SubLocationEntity {
     private Long subLocationId;
     @ManyToOne
     @JoinColumn(name = "location_id")
-    private BoulderGymEntity boulderGymEntity;
+    private BoulderingGymEntity boulderingGymEntity;
     @Column(name = "sub_location_name")
     private String subLocationName;
 
     public SubLocationEntity() {
     }
 
-    public SubLocationEntity(Long subLocationId, BoulderGymEntity boulderGymEntity, String subLocationName) {
+    public SubLocationEntity(Long subLocationId, BoulderingGymEntity boulderingGymEntity, String subLocationName) {
         this.subLocationId = subLocationId;
-        this.boulderGymEntity = boulderGymEntity;
+        this.boulderingGymEntity = boulderingGymEntity;
         this.subLocationName = subLocationName;
     }
 
@@ -32,12 +32,12 @@ public class SubLocationEntity {
         this.subLocationId = subLocationId;
     }
 
-    public BoulderGymEntity getBoulderGymEntity() {
-        return boulderGymEntity;
+    public BoulderingGymEntity getBoulderingGymEntity() {
+        return boulderingGymEntity;
     }
 
-    public void setBoulderGymEntity(BoulderGymEntity boulderGymEntity) {
-        this.boulderGymEntity = boulderGymEntity;
+    public void setBoulderingGymEntity(BoulderingGymEntity boulderingGymEntity) {
+        this.boulderingGymEntity = boulderingGymEntity;
     }
 
     public String getSubLocationName() {

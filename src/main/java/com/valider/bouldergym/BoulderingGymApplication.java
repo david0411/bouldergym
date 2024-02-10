@@ -8,10 +8,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class BouldergymApplication {
+public class BoulderingGymApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BouldergymApplication.class, args);
+		SpringApplication.run(BoulderingGymApplication.class, args);
 	}
 
 	@Bean

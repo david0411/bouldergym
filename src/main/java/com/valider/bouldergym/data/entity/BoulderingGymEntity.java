@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "boulder_gym")
-public class BoulderGymEntity {
+public class BoulderingGymEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -17,14 +17,14 @@ public class BoulderGymEntity {
     @Column(name = "active")
     private boolean active;
 
-    public BoulderGymEntity(Long locationId, String locationName, String description, boolean active) {
+    public BoulderingGymEntity(Long locationId, String locationName, String description, boolean active) {
         this.locationId = locationId;
         this.locationName = locationName;
         this.description = description;
         this.active = active;
     }
 
-    public BoulderGymEntity() {
+    public BoulderingGymEntity() {
 
     }
 
